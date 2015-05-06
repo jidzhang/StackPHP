@@ -1,0 +1,2 @@
+http://api.stackexchange.com/2.0/users/1/questions?filter=default&site=stackoverflow&page=1	a:3:{s:8:"filename";d:1430825878.0268800258636474609375;s:19:"retrieval_timestamp";i:1430825878;s:3:"ttl";i:600;}
+http://api.stackexchange.com/2.0/users?filter=default&site=stackoverflow&inname=gitcafe&page=1	a:3:{s:8:"filename";d:1430825890.9590160846710205078125;s:19:"retrieval_timestamp";i:1430825890;s:3:"ttl";i:600;}
