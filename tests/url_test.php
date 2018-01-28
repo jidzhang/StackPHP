@@ -37,14 +37,14 @@ class URLTest extends Test
         
         // Now make some adjustments to the path settings
         $url->SetCategory('questions');
-        $this->CompareOutput($url->CompleteURL(), 'http://api.stackexchange.com/2.0/questions?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com&test=new');
+        $this->CompareOutput($url->CompleteURL(), 'http://api.stackexchange.com/2.2/questions?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com&test=new');
         
         $url->AddID(45);
         $url->AddID(46);
-        $this->CompareOutput($url->CompleteURL(), 'http://api.stackexchange.com/2.0/questions/45;46?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com&test=new');
+        $this->CompareOutput($url->CompleteURL(), 'http://api.stackexchange.com/2.2/questions/45;46?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com&test=new');
         
         $url->SetMethod('answers');
-        $this->CompareOutput($url->CompleteURL(), 'http://api.stackexchange.com/2.0/questions/45;46/answers?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com&test=new');
+        $this->CompareOutput($url->CompleteURL(), 'http://api.stackexchange.com/2.2/questions/45;46/answers?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com&test=new');
     }
 }
 

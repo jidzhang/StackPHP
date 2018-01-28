@@ -24,15 +24,15 @@ class QuestionTest extends Test
         // Stack Apps - might as well test that too)
         $request = new QuestionRequest('stackapps.com');
         
-        $this->CompareOutput($request->URL(), 'http://api.stackexchange.com/2.0/questions?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com');
+        $this->CompareOutput($request->URL(), 'http://api.stackexchange.com/2.2/questions?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com');
 
         // Now fetch only questions with no answers
         $request->NoAnswers();
-        $this->CompareOutput($request->URL(), 'http://api.stackexchange.com/2.0/questions/no-answers?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com');
+        $this->CompareOutput($request->URL(), 'http://api.stackexchange.com/2.2/questions/no-answers?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com');
 
         // Reduce this list down to questions that have votes > 8
         $request->SortByVotes()->Min(8);
-        $this->CompareOutput($request->URL(), 'http://api.stackexchange.com/2.0/questions/no-answers?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com&sort=votes&min=8');
+        $this->CompareOutput($request->URL(), 'http://api.stackexchange.com/2.2/questions/no-answers?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=stackapps.com&sort=votes&min=8');
 
         // Execute the request to obtain a paged response
         $response = $request->Exec();

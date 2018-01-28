@@ -26,21 +26,21 @@ class UserTest extends Test
         // Use the /me route (we have a user request returned)
         $request = $superuser->Me('dummyvalue');
         
-        $this->CompareOutput($request->URL(), 'https://api.stackexchange.com/2.0/me?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=superuser&access_token=dummyvalue');
+        $this->CompareOutput($request->URL(), 'https://api.stackexchange.com/2.2/me?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=superuser&access_token=dummyvalue');
         
         // Get the user's inbox
         $request = $request->Inbox();
-        $this->CompareOutput($request->URL(), 'https://api.stackexchange.com/2.0/me/inbox?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=superuser&access_token=dummyvalue');
+        $this->CompareOutput($request->URL(), 'https://api.stackexchange.com/2.2/me/inbox?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=superuser&access_token=dummyvalue');
         
         // Create a user request for user number 1
         $request = new UserRequest('serverfault');
         
-        $this->CompareOutput($request->URL(), 'http://api.stackexchange.com/2.0/users?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=serverfault');
+        $this->CompareOutput($request->URL(), 'http://api.stackexchange.com/2.2/users?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=serverfault');
         
         // Try /me/associated
         $request = $superuser->Me('access_token')->Associated();
         
-        $this->CompareOutput($request->URL(), 'https://api.stackexchange.com/2.0/me/associated?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=superuser&access_token=access_token');
+        $this->CompareOutput($request->URL(), 'https://api.stackexchange.com/2.2/me/associated?filter=' . urlencode(Filter::$default_filter) . '&key=' . urlencode(API::$key) . '&site=superuser&access_token=access_token');
     }
 }
 

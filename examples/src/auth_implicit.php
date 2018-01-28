@@ -62,7 +62,7 @@ if(isset($_GET['auth_redirect']))
       
       // Now fetch the inbox data
       var script_response = document.createElement('script');
-      script_response.src = 'https://api.stackexchange.com/2.0/inbox?key=' +
+      script_response.src = 'https://api.stackexchange.com/2.2/inbox?key=' +
                             StackPHP.APIKey + '&access_token=' + access_token +
                             '&callback=DisplayInbox';
       
