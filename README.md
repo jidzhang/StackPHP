@@ -1,2 +1,2 @@
 # StackPHP
-stackoverflow API wrapper : Stack.PHP
+StackExchange API wrapper: Stack.PHP, light and powerful.
