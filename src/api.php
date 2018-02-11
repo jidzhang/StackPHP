@@ -98,7 +98,7 @@ class API
     public static $debug = FALSE;
     
     // The current version of the API
-    private static $api_version = '2.0'; // We want it to be treated as a string
+    private static $api_version = '2.2'; // We want it to be treated as a string
     
     // Request throttling variables
     private static $request_timeout = 0.033333333333;  // 1 / 30

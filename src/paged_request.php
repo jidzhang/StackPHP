@@ -225,6 +225,16 @@ class PagedRequest
         $this->SortBy('votes');
         return $this;
     }
+
+    /// Orders the returned items by their score.
+    /**
+     * \return the current instance
+     */
+    public function SortByRelevance()
+    {
+        $this->SortBy('relevance');
+        return $this;
+    }
 }
 
 ?>
